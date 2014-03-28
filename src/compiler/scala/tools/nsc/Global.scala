@@ -1619,7 +1619,7 @@ class Global(var currentSettings: Settings, var reporter: Reporter)
       checkDeprecatedSettings(unitbuf.head)
       globalPhase = fromPhase
 
-     while (globalPhase.hasNext && !reporter.hasErrors) {
+      while (globalPhase.hasNext) {
         val startTime = currentTime
         phase = globalPhase
         globalPhase.run()
