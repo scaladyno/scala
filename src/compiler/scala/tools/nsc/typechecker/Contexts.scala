@@ -541,7 +541,7 @@ trait Contexts { self: Analyzer =>
     }
 
     private def unitError(pos: Position, msg: String): Unit =
-      if (checking) onTreeCheckerError(pos, msg) else unit.error(pos, msg)
+      if (checking) onTreeCheckerError(pos, msg) else unit.warning(pos, msg)
 
     @inline private def issueCommon(err: AbsTypeError)(pf: PartialFunction[AbsTypeError, Unit]) {
       // TODO: are errors allowed to have pos == NoPosition??

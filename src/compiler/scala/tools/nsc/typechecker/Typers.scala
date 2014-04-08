@@ -4768,7 +4768,6 @@ trait Typers extends Adaptations with Tags with TypersTracking with PatternTyper
         def inEmptyPackage = if (settings.exposeEmptyPackage) lookupInEmpty(name) else NoSymbol
 
         def issue(err: AbsTypeError) = {
-          println("xxx")
           // Avoiding some spurious error messages: see SI-2388.
           val suppress = reporter.hasErrors && (name startsWith tpnme.ANON_CLASS_NAME)
           if (!suppress)
